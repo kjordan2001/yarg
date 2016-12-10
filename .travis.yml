@@ -1,5 +1,5 @@
 language: java
-jdk: oraclejdk6
+jdk: oraclejdk8
 
 env:
   - YARG_OPEN_OFFICE_PATH=/usr/lib/libreoffice/program/
