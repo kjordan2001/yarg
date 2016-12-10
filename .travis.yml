@@ -1,5 +1,8 @@
 language: java
-jdk: oraclejdk8
+jdk: oraclejdk6
+
+env:
+  - YARG_OPEN_OFFICE_PATH=/usr/lib/libreoffice/program/
 
 before_install:
   - (cd core && chmod +x ./gradlew)
@@ -18,5 +21,4 @@ cache:
 addons:
   apt:
     packages:
-      - oracle-java8-installer
       - libreoffice
