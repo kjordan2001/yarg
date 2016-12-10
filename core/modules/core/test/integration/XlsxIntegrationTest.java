@@ -208,7 +208,7 @@ public class XlsxIntegrationTest {
         compareFiles("./result/integration/result-crosstab.xlsx", "./modules/core/test/integration/etalon-crosstab.xlsx");
     }
 
-    @Ignore("Fails on Linux")
+    @Ignore("Fails on Travis CI")
     @Test
     public void testXlsxFormats() throws Exception {
         BandData root = new BandData("Root", null, BandOrientation.HORIZONTAL);
