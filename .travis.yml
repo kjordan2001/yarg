@@ -11,7 +11,7 @@ install:
   - (cd core &&./gradlew --no-daemon assemble)
 
 script:
-  - (cd core &&./gradlew --no-daemon test)
+  - (cd core &&./gradlew --no-daemon test --debug)
 
 cache:
   directories:
