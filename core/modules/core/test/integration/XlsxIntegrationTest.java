@@ -1,7 +1,3 @@
-/**
- * @author degtyarjov
- * @version $Id$
- */
 package integration;
 
 import com.haulmont.yarg.formatters.ReportFormatter;
@@ -20,7 +16,6 @@ import org.junit.Test;
 import org.xlsx4j.sml.Cell;
 import org.xlsx4j.sml.Row;
 import smoketest.ConstantMap;
-import smoketest.RandomMap;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -221,7 +216,7 @@ public class XlsxIntegrationTest {
         BandData header = new BandData("Header", root, BandOrientation.VERTICAL);
         BandData band = new BandData("Band", root, BandOrientation.VERTICAL);
         band.addData("number", BigDecimal.valueOf(-200015));
-        band.addData("date", new Date(1440747161585l));
+        band.addData("date", new Date(1440747161585L));
         band.addData("money", -113123d);
         band.addData("text", "someText");
 
@@ -384,8 +379,8 @@ public class XlsxIntegrationTest {
             Document.SheetWrapper resultWorksheet = resultWorksheets.get(i);
             Document.SheetWrapper etalonWorksheet = etalonWorksheets.get(i);
 
-            List<Row> resultRows = resultWorksheet.getWorksheet().getJaxbElement().getSheetData().getRow();
-            List<Row> etalonRows = etalonWorksheet.getWorksheet().getJaxbElement().getSheetData().getRow();
+            List<Row> resultRows = resultWorksheet.getWorksheet().getContents().getSheetData().getRow();
+            List<Row> etalonRows = etalonWorksheet.getWorksheet().getContents().getSheetData().getRow();
             for (int j = 0, rowSize = resultRows.size(); j < rowSize; j++) {
                 Row resultRow = resultRows.get(j);
                 Row etalonRow = etalonRows.get(j);
@@ -402,6 +397,5 @@ public class XlsxIntegrationTest {
                 }
             }
         }
-
     }
 }
